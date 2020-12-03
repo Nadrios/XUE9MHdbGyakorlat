@@ -1,0 +1,79 @@
+BEGIN
+	INSERT INTO Gyrosos VALUES (1, '0/24', 132456789, 'Mutchen-dutchen', 'WallStreet', 66, 'New York', 'valami@mail.alien');
+	INSERT INTO Gyrosos VALUES (2, '0/24', 234567891, 'Hammas', 'WallStreet', 99, 'New York', 'valamimas@mail.alien');
+	INSERT INTO Gyrosos VALUES (3, '0/24', 345678912, 'Hesbollah', 'WallStreet', 33, 'New York', 'valamiegyebb@mail.alien') ;
+	INSERT INTO Gyrosos VALUES (4, '0/24', 456789123, 'MC.Donalds', 'Hlavne', 11, 'Kosice', 'egyedi@mail.alien') ;
+	INSERT INTO Gyrosos VALUES (5, '0/24', 567891234, 'KFC', 'Brookstreet',6, 'London', 'valamiegyedi@mail.alien') ;
+END;
+
+BEGIN
+	INSERT INTO Beszallito VALUES 	(1, 'Utca1', 1, 'Varos1', 123456789, 'szallito1@mail.ru','Szallito1');
+	INSERT INTO Beszallito VALUES 	(2, 'Utca2', 2, 'Varos2', 234567891, 'szallito2@mail.ru','Szallito2');
+	INSERT INTO Beszallito VALUES 	(3, 'Utca3', 3, 'Varos3', 345678912, 'szallito3@mail.ru','Szallito3');
+	INSERT INTO Beszallito VALUES 	(4, 'Utca4', 4, 'Varos4', 456789123, 'szallito4@mail.ru','Szallito4');
+	INSERT INTO Beszallito VALUES 	(5, 'Utca5', 5, 'Varos5', 567891234, 'szallito5@mail.ru','Szallito5');
+
+END;
+
+BEGIN
+	INSERT INTO Beszallit VALUES (TO_DATE('1111-11-11','YYYY-MM-DD'), 'Hus', 1, 3);
+	INSERT INTO Beszallit VALUES (TO_DATE('2222-12-22','YYYY-MM-DD'), 'Zoldseg', 1, 1);
+	INSERT INTO Beszallit VALUES (TO_DATE('3333-03-30','YYYY-MM-DD'), 'Pita', 5, 3);
+END;
+
+BEGIN
+	INSERT INTO Kiszallito VALUES (1, 123456789, 'Nev1', 2);
+	INSERT INTO Kiszallito VALUES (2, 234567891, 'Nev2', 2);
+	INSERT INTO Kiszallito VALUES (3, 345678912, 'Nev3', 3);
+	INSERT INTO Kiszallito VALUES (4, 456789123, 'Nev4', 3);
+	INSERT INTO Kiszallito VALUES (5, 567891234, 'Nev5', 1);
+END;
+
+BEGIN
+	INSERT INTO Gyros VALUES (1,'1010HUF',150,5);
+	INSERT INTO Gyros VALUES (2,'2020HUF',175,4);
+	INSERT INTO Gyros VALUES (3,'5EUR',160,3);
+	INSERT INTO Gyros VALUES (4,'1500HUF',160,2);
+	INSERT INTO Gyros VALUES (5,'1000HUF',135,1);
+END;
+
+BEGIN
+	INSERT INTO Toltelek VALUES ('minden',2);
+	INSERT INTO Toltelek VALUES ('nemcsipos',4);
+	INSERT INTO Toltelek VALUES ('nincshagyma',3);
+
+END;
+
+BEGIN
+	INSERT INTO Vasarlo VALUES (1,123456789,'Cim1','Nev1');
+	INSERT INTO Vasarlo VALUES (2,234567891,'Cim2','Nev2');
+	INSERT INTO Vasarlo VALUES (3,345678912,'Cim3','Nev3');
+	INSERT INTO Vasarlo VALUES (4,456789123,'Cim2','Nev4');
+	INSERT INTO Vasarlo VALUES (5,567891234,'Cim1','Nev2');
+END;
+
+BEGIN
+	INSERT INTO Bankkartya VALUES (12341234,'Bank1',TO_DATE('2001-11-11','YYYY-MM-DD'),'Visa',5);
+	INSERT INTO Bankkartya VALUES (23452345,'Bank2',TO_DATE('2002-12-22','YYYY-MM-DD'),'Visa',4);
+	INSERT INTO Bankkartya VALUES (34563456,'Bank3',TO_DATE('2003-03-23','YYYY-MM-DD'),'Visa',3);
+	INSERT INTO Bankkartya VALUES (45674567,'Bank4',TO_DATE('2004-04-24','YYYY-MM-DD'),'Visa',2);
+	INSERT INTO Bankkartya VALUES (56785678,'Bank5',TO_DATE('2005-05-25','YYYY-MM-DD'),'Visa',1);
+END;
+
+
+BEGIN
+	INSERT INTO Rendel VALUES (5,1);
+	INSERT INTO Rendel VALUES (4,2);
+	INSERT INTO Rendel VALUES (4,4);
+END;	
+
+
+UPDATE Gyrosos SET Nyitvatartas='24/7' WHERE GyrososID=2;
+
+UPDATE Kiszallito SET Telefonszam=66666666 WHERE KiszallitoID=3;
+
+UPDATE Gyros SET Ear='1800HUF' WHERE GyrosID=3;
+
+UPDATE Bankkartya SET Lejarati_datum=TO_DATE('2003-03-13','YYYY-MM-DD') WHERE VasarloID=3;
+
+UPDATE Gyrosos SET Utca='Time square' WHERE GyrososID=3;

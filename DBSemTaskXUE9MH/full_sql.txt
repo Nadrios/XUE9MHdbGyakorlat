@@ -80,7 +80,7 @@ FOREIGN KEY (GyrosID) REFERENCES Gyros(GyrosID),
 FOREIGN KEY (VasarloID) REFERENCES Vasarlo(VasarloID)
 );
 
-    Desc Gyrosos
+
 
 BEGIN
 	INSERT INTO Gyrosos VALUES (1, '0/24', 132456789, 'Mutchen-dutchen', 'WallStreet', 66, 'New York', 'valami@mail.alien');

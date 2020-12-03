@@ -1,0 +1,81 @@
+CREATE TABLE Gyrosos (
+GyrososID INT NOT NULL,
+Nyitvatartas VARCHAR(20), 
+Telefonszam INT,
+Nev VARCHAR(30), 
+Utca VARCHAR(30),
+Hazszam NUMBER,
+Varos VARCHAR(30), 
+Email VARCHAR(50),
+PRIMARY KEY (GyrososID)
+);
+
+CREATE TABLE Beszallito (
+BeszallitoID INT NOT NULL, 
+Utca VARCHAR(30),
+Hazszam NUMBER,
+Varos VARCHAR(30),
+Telefonszam INT,
+Email VARCHAR(50),
+Nev VARCHAR(30),
+PRIMARY KEY (BeszallitoID)
+); 
+
+CREATE TABLE Beszallit (
+Datum DATE,
+Termek VARCHAR(20),
+GyrososID INT,
+BeszallitoID INT,
+FOREIGN KEY (GyrososID) REFERENCES Gyrosos(GyrososID),
+FOREIGN KEY (BeszallitoID) REFERENCES Beszallito(BeszallitoID)
+);
+
+CREATE TABLE Kiszallito (
+KiszallitoID INT NOT NULL, 
+Telefonszam INT,
+Nev VARCHAR(30),
+GyrososID INT,
+PRIMARY KEY (KiszallitoID),
+FOREIGN KEY (GyrososID) REFERENCES Gyrosos(GyrososID)
+);
+
+CREATE TABLE Gyros (
+GyrosID INT NOT NULL,
+Ear VARCHAR(7),
+Suly INT NOT NULL,
+GyrososID INT NOT NULL,
+PRIMARY KEY (GyrosID),
+FOREIGN KEY (GyrososID) REFERENCES Gyrosos(GyrososID)
+); 
+
+CREATE TABLE Toltelek (
+Toltelek VARCHAR(25),
+GyrosID INT,
+FOREIGN KEY (GyrosID) REFERENCES Gyros(GyrosID)
+); 
+
+CREATE TABLE Vasarlo (
+VasarloID INT NOT NULL,
+Telefonszam INT,
+Cim VARCHAR (70), 
+Nev VARCHAR(30),
+PRIMARY KEY (VasarloID)
+);
+
+
+CREATE TABLE Bankkartya (
+Kartyaszam INT NOT NULL,
+Bank VARCHAR(30),
+Lejarati_datum DATE,
+Tipus VARCHAR(20),
+VasarloID INT,
+PRIMARY KEY (Kartyaszam),
+FOREIGN KEY (VasarloID) REFERENCES Vasarlo(VasarloID)
+);
+
+CREATE TABLE Rendel (
+GyrosID INT,
+VasarloID INT,
+FOREIGN KEY (GyrosID) REFERENCES Gyros(GyrosID),
+FOREIGN KEY (VasarloID) REFERENCES Vasarlo(VasarloID)
+);

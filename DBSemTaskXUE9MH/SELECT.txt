@@ -1,0 +1,17 @@
+SELECT Nev, Cim FROM Vasarlo; 
+
+SELECT * FROM Gyros WHERE suly < 160;
+
+SELECT Nev FROM Gyrosos JOIN Gyros USING (GyrososID) WHERE suly < 160;
+
+SELECT * FROM Gyros WHERE suly > (SELECT avg(suly) FROM Gyros);
+
+SELECT Varos, count(*)"Gyrososok száma" FROM Gyrosos GROUP BY Varos;
+
+SELECT Vasarlo.nev, Varos FROM Vasarlo LEFT JOIN Rendel USING(VasarloID) LEFT JOIN Gyros USING( GyrosID) LEFT JOIN Gyrosos USING( GyrososID) ORDER BY Vasarlo.nev;
+
+SELECT Nev, Lejarati_datum FROM Bankkartya JOIN Vasarlo USING(VasarloID) WHERE Lejarati_datum < sysdate;
+
+SELECT Nev, Suly FROM Vasarlo JOIN rendel USING(VasarloID) JOIN Gyros USING(GyrosID) WHERE Suly <( SELECT AVG(Suly) FROM Gyros);
+
+SELECT Bank, Vasarlo.Nev"Vásárló neve", Toltelek, Gyrosos.Nev"Gyrosos neve" FROM Bankkartya JOIN Vasarlo USING (VasarloID) JOIN rendel USING(VasarloID) JOIN Gyros USING(GyrosID) JOIN Toltelek USING(GyrosID) JOIN Gyrosos USING(GyrososID) WHERE GyrososID=2;
