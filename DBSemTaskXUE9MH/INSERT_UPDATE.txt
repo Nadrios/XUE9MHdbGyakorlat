@@ -20,9 +20,9 @@ BEGIN
 END;
 
 BEGIN
-	INSERT INTO Beszallit VALUES (TO_DATE('2011-11-11','YYYY-MM-DD'), ‘Hus', 1, 3);
-	INSERT INTO Beszallit VALUES TO_DATE('2017-10-11','YYYY-MM-DD'), ‘Zoldseg', 1, 1);
-	INSERT INTO Beszallit VALUES TO_DATE('2020-11-27','YYYY-MM-DD'), ‘Pita', 5, 3);
+	INSERT INTO Beszallit VALUES (TO_DATE('2011-11-11','YYYY-MM-DD'), 'Hus', 1, 3);
+	INSERT INTO Beszallit VALUES (TO_DATE('2017-10-11','YYYY-MM-DD'), 'Zoldseg', 1, 1);
+	INSERT INTO Beszallit VALUES (TO_DATE('2020-11-27','YYYY-MM-DD'), 'Pita', 5, 3);
 END;
 
 BEGIN
@@ -42,9 +42,9 @@ BEGIN
 END;
 
 BEGIN
-	INSERT INTO Toltelek VALUES (‘minden',2);
-	INSERT INTO Toltelek VALUES (‘nemcsipos',4);
-	INSERT INTO Toltelek VALUES (‘nincshagyma',3);
+	INSERT INTO Toltelek VALUES ('minden',2);
+	INSERT INTO Toltelek VALUES ('nemcsipos',4);
+	INSERT INTO Toltelek VALUES ('nincshagyma',3);
 
 END;
 
